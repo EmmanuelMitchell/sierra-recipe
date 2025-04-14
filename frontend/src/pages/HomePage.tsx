@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChefHat, Search, ThumbsUp, Star } from 'lucide-react';
+import { ChefHat, Search, ThumbsUp } from 'lucide-react';
 import { useRecipes } from '../context/RecipeContext';
 import RecipeCard from '../components/RecipeCard';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChefHat, Search, User, LogOut } from 'lucide-react';
+import { Menu, X, ChefHat, User, LogOut } from 'lucide-react';
 import { useUser } from '../context/UserContext';
 
 const Navbar: React.FC = () => {

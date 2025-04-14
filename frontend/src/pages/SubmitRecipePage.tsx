@@ -156,30 +156,49 @@ const SubmitRecipePage: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+    
+  //   if (!isLoggedIn) {
+  //     navigate('/login', { state: { message: 'Please log in to submit recipes' } });
+  //     return;
+  //   }
+    
+  //   if (validateForm()) {
+  //     const newRecipe = {
+  //       ...formData,
+  //       id: Date.now().toString(),
+  //       userId: currentUser?.id || '',
+  //       author: currentUser?.username || 'Anonymous',
+  //       datePosted: new Date().toISOString(),
+  //       ratings: [],
+  //       comments: []
+  //     };
+      
+  //     addRecipe(newRecipe);
+  //     navigate('/recipes');
+  //   }
+  // };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+  
     if (!isLoggedIn) {
       navigate('/login', { state: { message: 'Please log in to submit recipes' } });
       return;
     }
-    
+  
     if (validateForm()) {
       const newRecipe = {
         ...formData,
-        id: Date.now().toString(),
-        userId: currentUser?.id || '',
-        author: currentUser?.username || 'Anonymous',
-        datePosted: new Date().toISOString(),
-        ratings: [],
-        comments: []
+        submittedBy: currentUser?.id || '',
       };
-      
+  
       addRecipe(newRecipe);
       navigate('/recipes');
     }
   };
-
+  
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Submit a New Recipe</h1>

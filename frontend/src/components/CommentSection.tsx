@@ -9,7 +9,7 @@ interface CommentSectionProps {
 
 const CommentSection: React.FC<CommentSectionProps> = ({ comments, onAddComment }) => {
   const [newComment, setNewComment] = useState('');
-  const { isLoggedIn, currentUser } = useUser();
+  const { isLoggedIn, } = useUser();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -40,7 +40,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-  const login = (username: string, password: string) => {
+  const login = (username: string) => {
     // In a real app, you would validate the password
     const user = users.find(u => u.username === username);
     if (user) {
@@ -51,7 +51,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return false;
   };
 
-  const register = (username: string, email: string, password: string) => {
+  const register = (username: string, email: string) => {
     // Check if username or email already exists
     if (users.some(u => u.username === username || u.email === email)) {
       return false;
